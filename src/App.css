@@ -68,7 +68,7 @@ body {
 
 #hero-section-wrapper {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   margin: auto;
   display: flex;
@@ -110,7 +110,7 @@ body {
     transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -20%);
   }
   100% {
     transform: translate(-50%, -50%);
@@ -122,7 +122,7 @@ body {
     transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -20%);
   }
   100% {
     transform: translate(-50%, -50%);
@@ -144,6 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
   background-color: rgb(15, 25, 30);
 }
 
@@ -167,13 +168,109 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: rgb(25, 80, 255);
+  overflow: hidden;
+}
+
+#carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#carousel-track-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#carousel-track {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  list-style: none;
+  transition: 1000ms;
+  border-radius: 5vw;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 1000ms;
+}
+
+#current-slide {
+  opacity: 1;
+}
+
+.carousel-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+#carousel-slide-1 {
+  background-image: url(/src/img/project-image-example.jpg);
+}
+
+#carousel-slide-2 {
+  background-image: url(/src/img/project-image-example-2.jpg);
+}
+
+#carousel-slide-3 {
+  background-image: url(/src/img/project-image-example-3.jpg);
+}
+
+.carousel-button {
+  height: 5vw;
+  width: 5vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-size: contain;
+  background-image: url(/src/img/carousel-arrow.png);
+  background-repeat: no-repeat;
+}
+
+#carousel-button-left {
+  left: 3vw;
+  z-index: 1;
+  transform: scaleX(-1);
+  opacity: 0.5;
+}
+
+#carousel-button-right {
+  right: 3vw;
+  opacity: 0.8;
+}
+
+#carousel-nav {
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.carousel-indicator {
+  height: 12px;
+  width: 12px;
+  border: 2px solid rgb(15, 25, 30);
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 /* contact-section-styles */
 #contact-section-wrapper {
   height: 100vh;
+  width: 85%;
+  margin: auto;
   display: flex;
 }
 
@@ -182,19 +279,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
   background-color: rgb(15, 25, 30);
 }
 
 #contact-section-call-header {
-  margin-left: 10%;
   text-align: left;
   color: rgb(25, 80, 255);
   font-weight: bold;
   font-size: 2rem;
 }
 
+#contact-section-call-to-action-statement {
+  font-size: 3rem;
+}
+
+.big-font {
+  font-size: 4;
+}
+
 #contact-section-call-paragraph {
-  width: 80%;
   margin-right: auto;
   margin-left: auto;
   font-weight: 100;
@@ -205,7 +309,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 5vw;
   padding-left: 5vw;
   z-index: 0;
   background-color: rgb(15, 25, 30) !important;

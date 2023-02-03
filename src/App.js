@@ -17,7 +17,7 @@ const App = () => {
           <AboutSection />
           <ProjectSection />
           <ContactSection />
-          <TechSection />
+          
           <Footer />
       </section>
   );
@@ -65,7 +65,7 @@ const NavBar = () => {
   })
   return (
     <section id="navbar-wrapper">
-      <div id="navbar-logo" className="navbar-list-item"><div className="navbar-logo-bold">ANDERSON</div>DEVELOPES</div>
+      <div id="navbar-logo" className="navbar-list-item"><span className="navbar-logo-bold">ANDERSON</span>DEVELOPES</div>
       <ul id="navbar-list">
         <li id="navbar-about-button" className="navbar-list-item">About</li>
         <li id="navbar-work-button" className="navbar-list-item">Work</li>
@@ -110,8 +110,89 @@ const AboutSection = () => {
   )
 }
 const ProjectSection = () => {
+  React.useEffect(() => {
+    /* defining variables for carousel */
+    const track = document.getElementById("carousel-track")
+    const slides = Array.from(track.children)
+
+    const nextButton = document.getElementById("carousel-button-right")
+    const prevButton = document.getElementById("carousel-button-left")
+
+    const slideWidth = slides[0].getBoundingClientRect().width;
+
+    let currentSlideIndex = 0;
+
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + "px";
+    })
+
+    /* when right button is pressed, move slides to the right */
+    nextButton.addEventListener("click", () => {
+      const currentSlide = track.querySelector("#current-slide")
+      const nextSlide = currentSlide.nextElementSibling;
+      const amountToMove = nextSlide.style.left;
+      /* increment current slide index */
+      currentSlideIndex++
+      /* adjustments based on slide index */
+      if(currentSlideIndex == 0) {
+        prevButton.style.opacity = .5;
+      } else prevButton.style.opacity = .8;
+      if(currentSlideIndex == 2) {
+        nextButton.style.opacity = .5;
+      } else nextButton.style.opacity = .81;
+      /* move to next slide */
+      track.style.transform = "translateX(-" + amountToMove + ")"
+      currentSlide.removeAttribute("id")
+      nextSlide.setAttribute("id", "current-slide")
+      currentSlide.style.opacity = 0;
+      nextSlide.style.opacity = 1;
+    })
+    /* when left button is pressed, move slides to the left */
+    prevButton.addEventListener("click", () => {
+      let currentSlide = track.querySelector("#current-slide")
+      const prevSlide = currentSlide.previousElementSibling;
+      const amountToMove = prevSlide.style.left;
+      /* increment current slide index */
+      currentSlideIndex--
+      /* adjustments based on slide index */
+      if(currentSlideIndex == 0) {
+        prevButton.style.opacity = .5;
+      } else prevButton.style.opacity = .8;
+      if(currentSlideIndex == 2) {
+        nextButton.style.opacity = .5;
+      } else nextButton.style.opacity = .8;
+      /* move to previous slide */
+      track.style.transform = "translateX(-" + amountToMove + ")"
+      currentSlide.removeAttribute("id")
+      currentSlide.style.opacity = 0;
+      prevSlide.style.opacity = 1;
+      prevSlide.setAttribute("id", "current-slide")
+    })
+  })
   return (
-    <section id="project-section-wrapper">Project Section</section>
+    <section id="project-section-wrapper">
+
+      <div id="carousel">
+        <div className="carousel-button" id="carousel-button-left"></div>
+
+        <div id="carousel-track-container">
+          <ul id="carousel-track">
+            <li className="carousel-slide" id="current-slide">
+              <img id="carousel-slide-1" className="carousel-image"></img>
+            </li>
+            <li className="carousel-slide">
+              <img id="carousel-slide-2" className="carousel-image"></img>
+            </li>
+            <li className="carousel-slide">
+              <img id="carousel-slide-3" className="carousel-image"></img>
+            </li>
+          </ul>
+        </div>
+
+        <div className="carousel-button" id="carousel-button-right"></div>
+      </div>
+
+    </section>
   )
 }
 const ContactSection = () => {
@@ -119,7 +200,8 @@ const ContactSection = () => {
     <section id="contact-section-wrapper">
       <div id="contact-section-call-to-action">
         <h2 id="contact-section-call-header">Contact</h2>
-        <p id="contact-section-call-paragraph">Have any big ideas? Just send me a message and lets make it real! Any type of inquiry is completely welcome.</p>
+        <h3 id="contact-section-call-to-action-statement">Have any BIG ideas?</h3>
+        <p id="contact-section-call-paragraph">Send me a message and lets make it real! Any type of inquiry is completely welcome.</p>
       </div>
       <form id="contact-section-form">
         <label htmlFor="form-name">Name</label>
