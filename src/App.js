@@ -2,13 +2,14 @@ import React from "react";
 
 import * as ReactDOM from 'react-dom/client';
 import "./App.css"
+import GoogleClone from "./projects/Google Clone/index.html"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 
 const App = () => {
   React.useEffect(() => {
-      document.title = "Home Page"
+      document.title = "Jacob Anderson"
   })
   return (
       <section>
@@ -101,7 +102,7 @@ const HeroSection = () => {
 const AboutSection = () => {
   return (
     <section id="about-section-wrapper">
-      <img id="about-section-picture" alt="personal-picture"></img>
+      <div id="about-section-picture" alt="personal-picture"></div>
       <div id="about-section-info">
         <h2 id="about-section-info-header">About</h2>
         <p id="about-section-info-paragraph">My name is Jacob, thanks for visting my website! I'm a fun loving and passionate website developer based in Grand Rapids, MI. I program and design modern, effective, and aesthetic websites for individuals and businesses with an emphasis in the front end, including branding and graphics.</p>
@@ -114,7 +115,6 @@ const ProjectSection = () => {
     /* defining variables for carousel */
     const track = document.getElementById("carousel-track")
     const slides = Array.from(track.children)
-
     const nextButton = document.getElementById("carousel-button-right")
     const prevButton = document.getElementById("carousel-button-left")
 
@@ -167,6 +167,11 @@ const ProjectSection = () => {
       currentSlide.style.opacity = 0;
       prevSlide.style.opacity = 1;
       prevSlide.setAttribute("id", "current-slide")
+    })
+    /* when project is clicked, load the project */
+    const projectTwo = document.getElementById("carousel-slide-2")
+    projectTwo.addEventListener("click", () => {
+
     })
   })
   return (

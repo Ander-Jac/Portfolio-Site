@@ -1,8 +1,9 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "",
   "main": "webpack.config.js",
+  "homepage": "http://jacobfanderson.com",
+  "description": "my react application",
   "dependencies": {
     "@babel/preset-env": "^7.18.10",
     "@babel/preset-react": "^7.18.6",
@@ -318,5 +319,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "html-loader": "^4.2.0"
+  }
 }
