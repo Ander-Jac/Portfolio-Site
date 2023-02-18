@@ -2,7 +2,6 @@ import React from "react";
 
 import * as ReactDOM from 'react-dom/client';
 import "./App.css"
-import GoogleClone from "./projects/Google Clone/index.html"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
@@ -168,11 +167,6 @@ const ProjectSection = () => {
       prevSlide.style.opacity = 1;
       prevSlide.setAttribute("id", "current-slide")
     })
-    /* when project is clicked, load the project */
-    const projectTwo = document.getElementById("carousel-slide-2")
-    projectTwo.addEventListener("click", () => {
-
-    })
   })
   return (
     <section id="project-section-wrapper">
@@ -183,20 +177,20 @@ const ProjectSection = () => {
         <div id="carousel-track-container">
           <ul id="carousel-track">
             <li className="carousel-slide" id="current-slide">
-              <img id="carousel-slide-1" className="carousel-image"></img>
+              <a><img id="carousel-slide-1" className="carousel-image"></img></a>
             </li>
             <li className="carousel-slide">
-              <img id="carousel-slide-2" className="carousel-image"></img>
+              <a href="https://jacobfanderson.com/GoogleClone/" target="_blank"><img id="carousel-slide-2" className="carousel-image"></img></a>
             </li>
-            <li className="carousel-slide">
-              <img id="carousel-slide-3" className="carousel-image"></img>
+           <li className="carousel-slide">
+              <a><img id="carousel-slide-3" className="carousel-image"></img></a>
             </li>
           </ul>
         </div>
 
         <div className="carousel-button" id="carousel-button-right"></div>
       </div>
-
+      <div>Testing</div>
     </section>
   )
 }
