@@ -314,7 +314,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
   "keywords": [],

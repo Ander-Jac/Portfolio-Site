@@ -11,6 +11,7 @@ $secondary-color: rgb(15,25,30);
     user-select: none;
     font-family:'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
     color: white;
+    border: none;
 }
 
 
@@ -39,7 +40,7 @@ body {
     font-weight: 100;
     gap: 2px;
     letter-spacing: 1px;
-    z-index: 20;
+    z-index: 10;
 }
 .navbar-logo-bold {
     font-weight: 1000;
@@ -63,7 +64,7 @@ body {
     display: block;
     background-image: url(/src/img/hero-image-2.webp);
     background-size: contain;
-    background-repeat:round;
+    background-repeat: round;
 }
 #hero-section-wrapper {
     height: 100vh;
@@ -122,6 +123,7 @@ body {
     width: 50vw;
     background-image: url(/src/img/about-section-img.jpg);
     background-size: cover;
+    background-position: center;
 }
 #about-section-info {
     width: 50vw;
@@ -147,30 +149,44 @@ body {
 
 
 /* project section styles */
+#project-section-background {
+    background-color: $main-color;
+}
 #project-section-wrapper {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    background-color: $main-color;
+    flex-direction: column;
+    align-content: center;
+    background: url(/src/img/hero-image-2.webp);
+    background-size: contain;
     overflow: hidden;
+}
+#project-section-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    font-size: 2rem;
+    color: $secondary-color;
 }
 #carousel {
     position: relative;
     height: 100%;
     width: 100%;
+    margin-bottom: 10vh;
 }
 #carousel-track-container {
     position: relative;
     height: 100%;
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 #carousel-track {
     height: 100%;
     width: 100%;
-    position: relative;
+    position: absolute;
     list-style: none;
     transition: 1000ms;
-    border-radius: 5vw;
 }
 .carousel-slide {
     position: absolute;
@@ -184,27 +200,28 @@ body {
     opacity: 1;
 }
 .carousel-image {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background-size: cover;
+    background-size: contain;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 50%;
+    
 }
 #carousel-slide-1 {
-    background-image: url(/src/img/project-image-example-2.jpg);
+    background-image: url(/src/img/project-image-1.png);
 }
 #carousel-slide-2 {
     background-image: url(/src/img/project-image-2.jpg);
 }
 #carousel-slide-3 {
-    background-image: url(/src/img/project-image-example-3.jpg);
+    background-image: url(/src/img/project-image-3.jpg);
 }
 .carousel-button {
-    height: 5vw;
-    width: 5vw;
+    height: 6vw;
+    width: 6vw;
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     cursor: pointer;
     background-size: contain;
@@ -212,30 +229,15 @@ body {
     background-repeat: no-repeat;
 }
 #carousel-button-left {
-    left: 3vw;
+    left: 2vw;
     z-index: 1;
     transform: scaleX(-1);
-    opacity: .5;
+    opacity: .3;
+    top: 38%;
 }
 #carousel-button-right {
-    right: 3vw;
+    right: 2vw;
     opacity: .8;
-}
-#carousel-nav {
-    height: 4vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-.carousel-indicator {
-    height: 12px;
-    width: 12px;
-    border: 2px solid $secondary-color;
-    border-radius: 8px;
-    padding: 8px;
-    margin-top: 15px;
-    cursor: pointer;
 }
 
 
@@ -267,7 +269,6 @@ body {
     font-size: 4;
 }
 #contact-section-call-paragraph {
-    
     margin-right: auto;
     margin-left: auto;
     font-weight: 100;
@@ -282,8 +283,9 @@ body {
     background-color: $secondary-color !important;
 }
 #form-submit-button {
-    height: 8vh;
-    width: 8vw;
+    height: 80px;
+    width: 100px;
+    margin-top: 5vh;
     margin-right: auto;
     margin-left: auto;
     border: none;
@@ -296,22 +298,15 @@ body {
     border: 1px solid whitesmoke;
     background-color: $main-color;
 }
+#contact-section-form label {
+    margin-top: 2vh;
+}
 #contact-section-form input, textarea{
-    margin-bottom: 7vh;
+    margin-bottom: 3.5;
     padding: 7px;
     border: none;
     border-radius: 10px;
     background-color: rgb(30,40,45);
-}
-
-
-/* tech section styles */
-#tech-section-wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $main-color;
 }
 
 
@@ -337,4 +332,79 @@ body {
 }
 .footer-nav-list-item:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+    #navbar-wrapper {
+        font-size: .7rem;
+    }
+    #navbar-list {
+        gap: 10px;
+    }
+
+    #hero-section-background {
+        height: 100vh;
+        background-size: cover;
+    }
+    #hero-section-header {
+        font-size: 2.5rem;
+        line-height: 8vh;
+    }
+
+    #about-section-wrapper {
+        flex-direction: column;
+        background-color: $secondary-color;
+    }
+    #about-section-picture {
+        height: 50vh;
+        width: 100vw;
+        border: 15px inset $secondary-color;
+        box-sizing: border-box;
+        background-position: 0% 10%;
+    }
+    #about-section-info {
+        height: 50vh;
+        width: 100vw;
+    }
+    
+    #project-section-wrapper {
+        height: 50vh;
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+    }
+    #carousel-track-container {
+        width: 73%;
+    }
+    .carousel-button {
+        height: 10vw;
+        width: 10vw;
+    }
+    #carousel-button-left {
+        top: 30%;
+    }
+
+    #contact-section-wrapper {
+        height: 80vh;
+        width: 85vw;
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+    #contact-section-call-to-action {
+        gap: 5px;
+    }
+    #contact-section-call-to-action-statement {
+        font-size: 2.05rem;
+    }
+    #contact-section-form {
+        height: 50vh;
+        width: 100%;
+        padding-left: 0vw;
+    }
+    #contact-section-call-to-action {
+        height: 50vh;
+        width: 100%;
+    }
 }

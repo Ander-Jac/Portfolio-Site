@@ -155,10 +155,10 @@ const ProjectSection = () => {
       currentSlideIndex--
       /* adjustments based on slide index */
       if(currentSlideIndex == 0) {
-        prevButton.style.opacity = .5;
+        prevButton.style.opacity = .3;
       } else prevButton.style.opacity = .8;
       if(currentSlideIndex == 2) {
-        nextButton.style.opacity = .5;
+        nextButton.style.opacity = .3;
       } else nextButton.style.opacity = .8;
       /* move to previous slide */
       track.style.transform = "translateX(-" + amountToMove + ")"
@@ -169,32 +169,47 @@ const ProjectSection = () => {
     })
   })
   return (
-    <section id="project-section-wrapper">
-
+    <section id="project-section-background">
+    <div id="project-section-wrapper">
+      <h2 id="project-section-header">Check Out My Projects</h2>
       <div id="carousel">
         <div className="carousel-button" id="carousel-button-left"></div>
 
         <div id="carousel-track-container">
           <ul id="carousel-track">
             <li className="carousel-slide" id="current-slide">
-              <a><img id="carousel-slide-1" className="carousel-image"></img></a>
+              <a href="https://jacobfanderson.com/Fakeflix/" target="_blank"><div id="carousel-slide-1" className="carousel-image"></div></a>
             </li>
             <li className="carousel-slide">
-              <a href="https://jacobfanderson.com/GoogleClone/" target="_blank"><img id="carousel-slide-2" className="carousel-image"></img></a>
+              <a href="https://jacobfanderson.com/GoogleClone/" target="_blank"><div id="carousel-slide-2" className="carousel-image"></div></a>
             </li>
            <li className="carousel-slide">
-              <a><img id="carousel-slide-3" className="carousel-image"></img></a>
+              <a href="https://jacobfanderson.com/StopWatch/" target="_blank"><div id="carousel-slide-3" className="carousel-image"></div></a>
             </li>
           </ul>
         </div>
 
         <div className="carousel-button" id="carousel-button-right"></div>
+        
       </div>
-      <div>Testing</div>
+      
+    </div>
     </section>
   )
 }
 const ContactSection = () => {
+  React.useEffect(() => {
+    const submitButton = document.getElementById("form-submit-button")
+    const nameInput = document.getElementById("form-name")
+    const emailInput = document.getElementById("form-email")
+    const messageInput = document.getElementById("form-message")
+    submitButton.addEventListener("click", () => {
+      if(emailInput.innerHTML != "") {
+        console.log(emailInput.innerHTML)
+        alert("Message Sent!")
+      }
+    })
+  })
   return (
     <section id="contact-section-wrapper">
       <div id="contact-section-call-to-action">
@@ -204,22 +219,17 @@ const ContactSection = () => {
       </div>
       <form id="contact-section-form">
         <label htmlFor="form-name">Name</label>
-        <input type="text" id="form-name" name="form-name" placeholder="Your name.."></input>
+        <input type="text" id="form-name" name="form-name" placeholder="Your name.."required></input>
 
         <label htmlFor="form-email">Email</label>
-        <input type="text" id="form-email" name="form-email" placeholder="Your email.."></input>
+        <input type="text" id="form-email" name="form-email" placeholder="Your email.." required></input>
 
         <label htmlFor="form-message">Message</label>
-        <textarea id="form-message" name="form-message" placeholder="Write something.." cols={21} rows={5}></textarea>
+        <textarea id="form-message" name="form-message" placeholder="Write something.." cols={21} rows={5} required></textarea>
 
         <button id="form-submit-button">Send</button>
       </form>
     </section>
-  )
-}
-const TechSection = () => {
-  return (
-    <section id="tech-section-wrapper">Tech Section</section>
   )
 }
 const Footer = () => {
