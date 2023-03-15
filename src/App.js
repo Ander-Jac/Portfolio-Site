@@ -70,6 +70,7 @@ const NavBar = () => {
         <li id="navbar-about-button" className="navbar-list-item">About</li>
         <li id="navbar-work-button" className="navbar-list-item">Work</li>
         <li id="navbar-contact-button" className="navbar-list-item">Contact</li>
+        <a href="https://github.com/Ander-Jac" target="_blank"><div id="navbar-github-button" className="navbar-list-item"></div></a>
       </ul>
     </section>
   )
@@ -214,7 +215,7 @@ const ContactSection = () => {
     <section id="contact-section-wrapper">
       <div id="contact-section-call-to-action">
         <h2 id="contact-section-call-header">Contact</h2>
-        <h3 id="contact-section-call-to-action-statement">Have any BIG ideas?</h3>
+        <h3 id="contact-section-call-to-action-statement">Have any big ideas?</h3>
         <p id="contact-section-call-paragraph">Send me a message and lets make it real! Any type of inquiry is completely welcome.</p>
       </div>
       <form id="contact-section-form">
@@ -260,6 +261,7 @@ const Footer = () => {
         <li className="footer-nav-list-item" id="footer-nav-work-button">Work</li>
         <li className="footer-nav-list-item" id="footer-nav-contact-button">Contact</li>
       </ul>
+      <div id="footer-code-link">Check Out This Site's <a href="https://github.com/Ander-Jac/Portfolio-Site" target="_blank">Source Code</a></div>
     </section>
   )
 }

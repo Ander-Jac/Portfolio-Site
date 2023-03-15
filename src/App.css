@@ -39,6 +39,15 @@ body {
   z-index: 10;
 }
 
+#navbar-github-button {
+  height: 1.2vw;
+  width: 1.2vw;
+  margin-left: 15px;
+  margin-top: 0.55vh;
+  background-image: url(/src/img/github-logo.png);
+  background-size: contain;
+}
+
 .navbar-logo-bold {
   font-weight: 1000;
 }
@@ -158,11 +167,12 @@ body {
 
 #project-section-wrapper {
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
-  background: url(/src/img/hero-image-2.webp);
-  background-size: contain;
+  background-image: url(/src/img/hero-image-2.webp);
+  background-repeat: round;
   overflow: hidden;
 }
 
@@ -236,7 +246,6 @@ body {
   width: 6vw;
   position: absolute;
   top: 45%;
-  transform: translateY(-50%);
   cursor: pointer;
   background-size: contain;
   background-image: url(/src/img/carousel-arrow.png);
@@ -248,7 +257,6 @@ body {
   z-index: 1;
   transform: scaleX(-1);
   opacity: 0.3;
-  top: 38%;
 }
 
 #carousel-button-right {
@@ -338,6 +346,7 @@ body {
 #footer-wrapper {
   height: 150px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(15, 25, 30);
@@ -360,7 +369,13 @@ body {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
+#footer-code-link {
+  margin-top: 4vh;
+  margin-bottom: 8vh;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 800px) {
   #navbar-wrapper {
     font-size: 0.7rem;
   }
@@ -374,6 +389,10 @@ body {
   #hero-section-header {
     font-size: 2.5rem;
     line-height: 8vh;
+    bottom: 8vh;
+  }
+  #hero-section-arrow {
+    display: none;
   }
   #about-section-wrapper {
     flex-direction: column;
@@ -391,20 +410,16 @@ body {
     width: 100vw;
   }
   #project-section-wrapper {
-    height: 50vh;
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
+    height: 40vh;
+    background-repeat: round;
   }
-  #carousel-track-container {
-    width: 73%;
+  #project-section-header {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
   }
   .carousel-button {
     height: 10vw;
     width: 10vw;
-  }
-  #carousel-button-left {
-    top: 30%;
   }
   #contact-section-wrapper {
     height: 80vh;
