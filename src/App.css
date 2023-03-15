@@ -9,6 +9,7 @@
   font-family: "Lucida Sans Unicode", "Lucida Sans", Arial, sans-serif;
   color: white;
   border: none;
+  overflow: none;
 }
 
 body {
@@ -40,10 +41,10 @@ body {
 }
 
 #navbar-github-button {
-  height: 1.2vw;
-  width: 1.2vw;
+  height: 1vw;
+  width: 1vw;
   margin-left: 15px;
-  margin-top: 0.55vh;
+  margin-top: 0.7vh;
   background-image: url(/src/img/github-logo.png);
   background-size: contain;
 }
@@ -84,7 +85,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(25, 80, 255);
+  background-color: rgb(60, 75, 255);
   z-index: -5;
 }
 
@@ -148,7 +149,7 @@ body {
 #about-section-info-header {
   margin-left: 10%;
   text-align: left;
-  color: rgb(25, 80, 255);
+  color: rgb(60, 75, 255);
   font-weight: bold;
   font-size: 2rem;
 }
@@ -162,7 +163,7 @@ body {
 
 /* project section styles */
 #project-section-background {
-  background-color: rgb(25, 80, 255);
+  background-color: rgb(60, 75, 255);
 }
 
 #project-section-wrapper {
@@ -283,7 +284,7 @@ body {
 
 #contact-section-call-header {
   text-align: left;
-  color: rgb(25, 80, 255);
+  color: rgb(60, 75, 255);
   font-weight: bold;
   font-size: 2rem;
 }
@@ -327,7 +328,7 @@ body {
 #form-submit-button:hover {
   cursor: pointer;
   border: 1px solid whitesmoke;
-  background-color: rgb(25, 80, 255);
+  background-color: rgb(60, 75, 255);
 }
 
 #contact-section-form label {

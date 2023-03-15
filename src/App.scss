@@ -1,7 +1,7 @@
 /* scss variables */
 
 /* color schemes */
-$main-color: rgb(25, 80, 255);
+$main-color: rgb(60, 75, 255);
 $secondary-color: rgb(15,25,30);
 
 
@@ -12,6 +12,7 @@ $secondary-color: rgb(15,25,30);
     font-family:'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
     color: white;
     border: none;
+    overflow: none;
 }
 
 
@@ -43,10 +44,10 @@ body {
     z-index: 10;
 }
 #navbar-github-button {
-    height: 1.2vw;
-    width: 1.2vw;
+    height: 1vw;
+    width: 1vw;
     margin-left: 15px;
-    margin-top: .55vh;
+    margin-top: .7vh;
     background-image: url(/src/img/github-logo.png);
     background-size: contain;
 }

@@ -104,8 +104,8 @@ const AboutSection = () => {
     <section id="about-section-wrapper">
       <div id="about-section-picture" alt="personal-picture"></div>
       <div id="about-section-info">
-        <h2 id="about-section-info-header">About</h2>
-        <p id="about-section-info-paragraph">My name is Jacob, thanks for visting my website! I'm a fun loving and passionate website developer based in Grand Rapids, MI. I program and design modern, effective, and aesthetic websites for individuals and businesses with an emphasis in the front end, including branding and graphics.</p>
+        <h2 id="about-section-info-header">About Me</h2>
+        <p id="about-section-info-paragraph">Hi, I'm Jacob, thanks for visting my website! I'm a fun loving and passionate website developer based in Grand Rapids, MI. I program and design modern, effective, and aesthetic websites for individuals and businesses with an emphasis in the front end, including branding and graphics.</p>
       </div>
     </section>
   )
@@ -218,7 +218,7 @@ const ContactSection = () => {
         <h3 id="contact-section-call-to-action-statement">Have any big ideas?</h3>
         <p id="contact-section-call-paragraph">Send me a message and lets make it real! Any type of inquiry is completely welcome.</p>
       </div>
-      <form id="contact-section-form">
+      <form action="https://formsubmit.co/jajake253@gmail.com" method="POST" id="contact-section-form">
         <label htmlFor="form-name">Name</label>
         <input type="text" id="form-name" name="form-name" placeholder="Your name.."required></input>
 
@@ -229,6 +229,8 @@ const ContactSection = () => {
         <textarea id="form-message" name="form-message" placeholder="Write something.." cols={21} rows={5} required></textarea>
 
         <button id="form-submit-button">Send</button>
+
+        <input type="hidden" name="_next" value="https://jacobfanderson.com/thankyou.html"></input>
       </form>
     </section>
   )
