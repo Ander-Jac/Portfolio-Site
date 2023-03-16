@@ -24,6 +24,22 @@ const App = () => {
 };
 const NavBar = () => {
   React.useEffect(() => {
+    /* adding functionality to mobile drop down menu */
+    const mobileMenuList = document.getElementById("mobile-navbar-list")
+    console.log(mobileMenuList)
+    const dropDownButton = document.getElementById("mobile-dropdown-icon");
+    const mobileMenu = document.getElementById("mobile-navbar-wrapper");
+    dropDownButton.addEventListener("click", () => {
+      if(mobileMenu.style.width == "0vw") {
+        mobileMenuList.style.display = "flex";
+        mobileMenu.style.width = "40vw";
+      } else {
+        mobileMenuList.style.display = "none";
+        mobileMenu.style.width = "0vw";
+      }
+    })
+
+
     /* adding functionality to nav buttons */
     const navLogo = document.getElementById("navbar-logo");
     const heroSection = document.getElementById("hero-section-background");
@@ -31,23 +47,37 @@ const NavBar = () => {
       heroSection.scrollIntoView({behavior: "smooth"});
     })
 
-    const aboutButton = document.getElementById("navbar-about-button");
     const aboutSection = document.getElementById("about-section-wrapper");
-    aboutButton.addEventListener("click", () => {
-      aboutSection.scrollIntoView({behavior: "smooth"});
+    const aboutButton = Array.from(document.getElementsByClassName("navbar-about-button"));
+    aboutButton.forEach(item => {
+      item.addEventListener("click", () => {
+        mobileMenuList.style.display = "none";
+        mobileMenu.style.width = "0vw";
+        aboutSection.scrollIntoView({behavior: "smooth"});
+      })
     })
 
-    const workButton = document.getElementById("navbar-work-button");
     const projectSection = document.getElementById("project-section-wrapper");
-    workButton.addEventListener("click", () => {
-      projectSection.scrollIntoView({behavior: "smooth"});
+    const workButton = Array.from(document.getElementsByClassName("navbar-work-button"));
+    workButton.forEach(item => {
+      item.addEventListener("click", () => {
+        mobileMenuList.style.display = "none";
+        mobileMenu.style.width = "0vw";
+        projectSection.scrollIntoView({behavior: "smooth"});
+      })
     })
 
-    const contactButton = document.getElementById("navbar-contact-button");
     const contactSection = document.getElementById("contact-section-wrapper");
-    contactButton.addEventListener("click", () => {
-      contactSection.scrollIntoView({behavior: "smooth"});
+    const contactButton = Array.from(document.getElementsByClassName("navbar-contact-button"));
+    contactButton.forEach(item => {
+      item.addEventListener("click", () => {
+        mobileMenuList.style.display = "none";
+        mobileMenu.style.width = "0vw";
+        contactSection.scrollIntoView({behavior: "smooth"});
+      })
     })
+
+    
     /* adding transition to background */
     const navBackground = document.getElementById("navbar-wrapper")
     const heroBackground = document.getElementById("hero-section-background")
@@ -67,11 +97,26 @@ const NavBar = () => {
     <section id="navbar-wrapper">
       <div id="navbar-logo" className="navbar-list-item"><span className="navbar-logo-bold">ANDERSON</span>DEVELOPES</div>
       <ul id="navbar-list">
-        <li id="navbar-about-button" className="navbar-list-item">About</li>
-        <li id="navbar-work-button" className="navbar-list-item">Work</li>
-        <li id="navbar-contact-button" className="navbar-list-item">Contact</li>
+        <li className="navbar-list-item navbar-about-button">About</li>
+        <li className="navbar-list-item navbar-work-button">Work</li>
+        <li className="navbar-list-item navbar-contact-button">Contact</li>
         <a href="https://github.com/Ander-Jac" target="_blank"><div id="navbar-github-button" className="navbar-list-item"></div></a>
+        <a href="https://www.linkedin.com/in/jake-anderson-028549236/" target="_blank"><div id="navbar-linkedin-button" className="navbar-list-item"></div></a>
       </ul>
+
+      <div id="mobile-dropdown-icon"></div>
+
+      <div id="mobile-navbar-wrapper">
+      <ul id="mobile-navbar-list">
+        <li className="mobile-navbar-list-item navbar-about-button">About</li>
+        <li className="mobile-navbar-list-item navbar-work-button">Work</li>
+        <li className="mobile-navbar-list-item navbar-contact-button">Contact</li>
+        <ul id="mobile-navbar-icon-list">
+          <a href="https://github.com/Ander-Jac" target="_blank"><div id="navbar-github-button" className="mobile-navbar-list-item mobile-navbar-link-icon"></div></a>
+          <a href="https://www.linkedin.com/in/jake-anderson-028549236/" target="_blank"><div id="navbar-linkedin-button" className="mobile-navbar-list-item mobile-navbar-link-icon"></div></a>
+        </ul>
+      </ul>
+      </div>
     </section>
   )
 };
@@ -79,6 +124,7 @@ const HeroSection = () => {
   React.useEffect(() => {
     /* adding animations and transitions to down arrow */
     const arrow = document.getElementById("hero-section-arrow")
+    const aboutSection = document.getElementById("about-section-wrapper");
     window.addEventListener("scroll", () => {
       arrow.style.opacity = ((parseInt(window.pageYOffset)) * -1 + 155) / 100
       arrow.style.top = ((parseInt(window.pageYOffset)/20) + 87) + "vh"
@@ -88,6 +134,9 @@ const HeroSection = () => {
         arrow.style.animation = "bounce 1000ms";
         arrow.style.animationIterationCount = "infinite"
       }
+    })
+    arrow.addEventListener("click", () => {
+      aboutSection.scrollIntoView({behavior: "smooth"});
     })
   })
   return (

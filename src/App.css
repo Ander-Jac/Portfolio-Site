@@ -41,11 +41,21 @@ body {
 }
 
 #navbar-github-button {
-  height: 1vw;
-  width: 1vw;
+  height: 1.6vw;
+  width: 1.6vw;
   margin-left: 15px;
   margin-top: 0.7vh;
+  padding: 0;
   background-image: url(/src/img/github-logo.png);
+  background-size: contain;
+}
+
+#navbar-linkedin-button {
+  height: 1.6vw;
+  width: 1.6vw;
+  margin-top: 0.7vh;
+  padding: 0;
+  background-image: url(/src/img/linkedin-logo.png);
   background-size: contain;
 }
 
@@ -65,6 +75,62 @@ body {
 
 .navbar-list-item:hover {
   cursor: pointer;
+}
+
+#mobile-dropdown-icon {
+  height: 7vw;
+  width: 7vw;
+  display: none;
+  background-image: url(/src/img/mobile-menu-icon.png);
+  background-size: cover;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#mobile-navbar-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 0vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 25, 30);
+  opacity: 0.95;
+  transition: ease-in-out;
+  transition-duration: 350ms;
+}
+
+#mobile-navbar-list {
+  position: relative;
+  bottom: 10vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+}
+
+.mobile-navbar-list-item {
+  padding: 5px;
+  list-style: none;
+}
+
+#mobile-navbar-icon-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+}
+
+.mobile-navbar-link-icon {
+  height: 5vw !important;
+  width: 5vw !important;
+  margin-left: 0px !important;
+  margin-top: 30px !important;
 }
 
 /* hero section styles */
@@ -111,6 +177,7 @@ body {
   background-size: contain;
   animation: bounce 1000ms;
   animation-iteration-count: infinite;
+  cursor: pointer;
 }
 
 @keyframes bounce {
@@ -378,10 +445,13 @@ body {
 
 @media only screen and (max-width: 800px) {
   #navbar-wrapper {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
   #navbar-list {
-    gap: 10px;
+    display: none;
+  }
+  #mobile-dropdown-icon {
+    display: block;
   }
   #hero-section-background {
     height: 100vh;
