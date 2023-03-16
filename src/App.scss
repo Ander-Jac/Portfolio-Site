@@ -23,6 +23,7 @@ body {
 
 /* navbar styles */
 #navbar-wrapper {
+    position: fixed;
     height: 55px;
     width: 85vw;
     padding-right: 7.5vw;
@@ -440,7 +441,7 @@ body {
     #about-section-picture {
         height: 50vh;
         width: 100vw;
-        border: 15px inset $secondary-color;
+        border: 15px solid $secondary-color;
         box-sizing: border-box;
         background-position: 0% 10%;
     }

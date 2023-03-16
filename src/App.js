@@ -61,7 +61,12 @@ const NavBar = () => {
         /* enable scrolling */
         body.style.overflow = "auto"
         body.style.height = "auto"
-        aboutSection.scrollIntoView({behavior: "smooth"});
+
+        /* scroll into view */
+        const elementPosition = aboutSection.getBoundingClientRect().top;
+        const navOffset = 55;
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+        window.scrollTo({top: offsetPosition, behavior: "smooth"});
       })
     })
 
@@ -75,7 +80,12 @@ const NavBar = () => {
         /* enable scrolling */
         body.style.overflow = "auto"
         body.style.height = "auto"
-        projectSection.scrollIntoView({behavior: "smooth"});
+        
+        /* scroll into view */
+        const elementPosition = projectSection.getBoundingClientRect().top;
+        const navOffset = 55;
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+        window.scrollTo({top: offsetPosition, behavior: "smooth"});
       })
     })
 
@@ -89,7 +99,12 @@ const NavBar = () => {
         /* enable scrolling */
         body.style.overflow = "auto"
         body.style.height = "auto"
-        contactSection.scrollIntoView({behavior: "smooth"});
+
+        /* scroll into view */
+        const elementPosition = contactSection.getBoundingClientRect().top;
+        const navOffset = 55;
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+        window.scrollTo({top: offsetPosition, behavior: "smooth"});
       })
     })
 
@@ -97,8 +112,9 @@ const NavBar = () => {
     /* adding transition to background */
     const navBackground = document.getElementById("navbar-wrapper")
     const heroBackground = document.getElementById("hero-section-background")
+    console.log(window.pageYOffset, aboutSection.getBoundingClientRect().top + window.pageYOffset)
     window.addEventListener("scroll", () => {
-      if(parseInt(window.pageYOffset) < 903) {
+      if(parseInt(window.pageYOffset) < aboutSection.getBoundingClientRect().top + window.pageYOffset -60) {
         navBackground.style.backgroundColor = "rgb(25,25,30,0)";
         navBackground.style.backdropFilter = "none";
         heroBackground.style.opacity = "1";

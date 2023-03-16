@@ -18,6 +18,7 @@ body {
 
 /* navbar styles */
 #navbar-wrapper {
+  position: fixed;
   height: 55px;
   width: 85vw;
   padding-right: 7.5vw;
@@ -472,7 +473,7 @@ body {
   #about-section-picture {
     height: 50vh;
     width: 100vw;
-    border: 15px inset rgb(15, 25, 30);
+    border: 15px solid rgb(15, 25, 30);
     box-sizing: border-box;
     background-position: 0% 10%;
   }
