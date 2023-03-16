@@ -25,14 +25,18 @@ const App = () => {
 const NavBar = () => {
   React.useEffect(() => {
     /* adding functionality to mobile drop down menu */
+    const body = document.body;
     const mobileMenuList = document.getElementById("mobile-navbar-list")
-    console.log(mobileMenuList)
     const dropDownButton = document.getElementById("mobile-dropdown-icon");
     const mobileMenu = document.getElementById("mobile-navbar-wrapper");
     dropDownButton.addEventListener("click", () => {
-      if(mobileMenu.style.width == "0vw") {
+      if(mobileMenu.style.width != "40vw") {
         mobileMenuList.style.display = "flex";
         mobileMenu.style.width = "40vw";
+
+        /* disable scrolling */
+        body.style.overflow = "hidden"
+        body.style.height = "100%"
       } else {
         mobileMenuList.style.display = "none";
         mobileMenu.style.width = "0vw";
@@ -53,6 +57,10 @@ const NavBar = () => {
       item.addEventListener("click", () => {
         mobileMenuList.style.display = "none";
         mobileMenu.style.width = "0vw";
+
+        /* enable scrolling */
+        body.style.overflow = "auto"
+        body.style.height = "auto"
         aboutSection.scrollIntoView({behavior: "smooth"});
       })
     })
@@ -63,6 +71,10 @@ const NavBar = () => {
       item.addEventListener("click", () => {
         mobileMenuList.style.display = "none";
         mobileMenu.style.width = "0vw";
+
+        /* enable scrolling */
+        body.style.overflow = "auto"
+        body.style.height = "auto"
         projectSection.scrollIntoView({behavior: "smooth"});
       })
     })
@@ -73,6 +85,10 @@ const NavBar = () => {
       item.addEventListener("click", () => {
         mobileMenuList.style.display = "none";
         mobileMenu.style.width = "0vw";
+
+        /* enable scrolling */
+        body.style.overflow = "auto"
+        body.style.height = "auto"
         contactSection.scrollIntoView({behavior: "smooth"});
       })
     })
