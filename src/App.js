@@ -40,6 +40,10 @@ const NavBar = () => {
       } else {
         mobileMenuList.style.display = "none";
         mobileMenu.style.width = "0vw";
+
+        /* enable scrolling */
+        body.style.overflow = "auto"
+        body.style.height = "auto"
       }
     })
 
