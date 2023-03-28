@@ -190,7 +190,7 @@ const AboutSection = () => {
       <div id="about-section-picture" alt="personal-picture"></div>
       <div id="about-section-info">
         <h2 id="about-section-info-header">About Me</h2>
-        <p id="about-section-info-paragraph">Hi, I'm Jacob, thanks for visting my website! I'm a fun loving and passionate website developer based in Grand Rapids, MI. I program and design modern, effective, and aesthetic websites for individuals and businesses with an emphasis in the front end, including branding and graphics.</p>
+        <p id="about-section-info-paragraph">Hi! I'm a self-taught web developer from Grand Rapids, Michigan, passionate about crafting visually striking and intuitive digital experiences. I prioritize clean, efficient, and responsive design for seamless user experiences. When not coding, I enjoy keeping fit and staying updated on the latest industry trends.</p>
       </div>
     </section>
   )
@@ -222,7 +222,7 @@ const ProjectSection = () => {
       if(currentSlideIndex == 0) {
         prevButton.style.opacity = .5;
       } else prevButton.style.opacity = .8;
-      if(currentSlideIndex == 2) {
+      if(currentSlideIndex == 3) {
         nextButton.style.opacity = .5;
       } else nextButton.style.opacity = .81;
       /* move to next slide */
@@ -243,7 +243,7 @@ const ProjectSection = () => {
       if(currentSlideIndex == 0) {
         prevButton.style.opacity = .3;
       } else prevButton.style.opacity = .8;
-      if(currentSlideIndex == 2) {
+      if(currentSlideIndex == 3) {
         nextButton.style.opacity = .3;
       } else nextButton.style.opacity = .8;
       /* move to previous slide */
@@ -257,20 +257,43 @@ const ProjectSection = () => {
   return (
     <section id="project-section-background">
     <div id="project-section-wrapper">
-      <h2 id="project-section-header">Check Out My Projects</h2>
+      <h2 id="project-section-header"></h2>
       <div id="carousel">
         <div className="carousel-button" id="carousel-button-left"></div>
 
         <div id="carousel-track-container">
           <ul id="carousel-track">
             <li className="carousel-slide" id="current-slide">
-              <a href="https://jacobfanderson.com/Fakeflix/" target="_blank"><div id="carousel-slide-1" className="carousel-image"></div></a>
+              <a href="https://jacobfanderson.com/Ecommerce/" target="_blank"><div id="carousel-slide-1" className="carousel-image">
+                <div className="project-overlay">
+                  <p>An e-commerce website for watches, functioning cart system.</p>
+                  <p className="project-tech">(HTML, CSS, Javascript, React)</p>
+                </div>
+              </div></a>
             </li>
             <li className="carousel-slide">
-              <a href="https://jacobfanderson.com/GoogleClone/" target="_blank"><div id="carousel-slide-2" className="carousel-image"></div></a>
+              <a href="https://jacobfanderson.com/Fakeflix/" target="_blank"><div id="carousel-slide-2" className="carousel-image">
+                <div className="project-overlay">
+                  <p>A movie database application, based on the TMDB API.</p>
+                  <p className="project-tech">(HTML, CSS, JavaScript, React)</p>
+                </div>
+              </div></a>
+            </li>
+            <li className="carousel-slide">
+              <a href="https://jacobfanderson.com/GoogleClone/" target="_blank"><div id="carousel-slide-3" className="carousel-image">
+                <div className="project-overlay">
+                  <p>A clone of the Google landing page.</p>
+                  <p className="project-tech">(HTML, CSS)</p>
+                </div>  
+              </div></a>
             </li>
            <li className="carousel-slide">
-              <a href="https://jacobfanderson.com/StopWatch/" target="_blank"><div id="carousel-slide-3" className="carousel-image"></div></a>
+              <a href="https://jacobfanderson.com/StopWatch/" target="_blank"><div id="carousel-slide-4" className="carousel-image">
+                <div className="project-overlay">
+                  <p>A fully functional stopwatch application.</p>
+                  <p className="project-tech">(HTML, CSS, JavaScript)</p>
+                </div>
+              </div></a>
             </li>
           </ul>
         </div>
@@ -301,7 +324,7 @@ const ContactSection = () => {
       <div id="contact-section-call-to-action">
         <h2 id="contact-section-call-header">Contact</h2>
         <h3 id="contact-section-call-to-action-statement">Have any big ideas?</h3>
-        <p id="contact-section-call-paragraph">Send me a message and lets make it real! Any type of inquiry is completely welcome.</p>
+        <p id="contact-section-call-paragraph">Send me a message and lets make it real! Any type of inquiry is welcome.</p>
       </div>
       <form action="https://formsubmit.co/jajake253@gmail.com" method="POST" id="contact-section-form">
         <label htmlFor="form-name">Name</label>

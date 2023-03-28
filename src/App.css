@@ -16,6 +16,10 @@ body {
   background-color: rgb(15, 25, 30);
 }
 
+a {
+  text-decoration: none;
+}
+
 /* navbar styles */
 #navbar-wrapper {
   position: fixed;
@@ -227,6 +231,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   font-weight: 100;
+  font-size: 2vw;
 }
 
 /* project section styles */
@@ -256,6 +261,8 @@ body {
 
 #carousel {
   position: relative;
+  display: flex;
+  align-items: center;
   height: 100%;
   width: 100%;
   margin-bottom: 10vh;
@@ -263,7 +270,7 @@ body {
 
 #carousel-track-container {
   position: relative;
-  height: 100%;
+  height: 40vw;
   width: 80%;
   margin: auto;
 }
@@ -290,9 +297,10 @@ body {
 }
 
 .carousel-image {
+  display: flex;
   height: 100%;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -303,11 +311,34 @@ body {
 }
 
 #carousel-slide-2 {
-  background-image: url(/src/img/project-image-2.jpg);
+  background-image: url(/src/img/project-image-2.png);
 }
 
 #carousel-slide-3 {
   background-image: url(/src/img/project-image-3.jpg);
+}
+
+#carousel-slide-4 {
+  background-image: url(/src/img/project-image-4.jpg);
+}
+
+.project-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 15%;
+  width: 100%;
+  top: 85%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.project-tech {
+  font-size: 0.8rem;
 }
 
 .carousel-button {
@@ -444,7 +475,11 @@ body {
   z-index: 2;
 }
 
-@media only screen and (max-width: 800px) {
+#footer-code-link a {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
   #navbar-wrapper {
     font-size: 0.9rem;
   }
@@ -481,6 +516,9 @@ body {
     height: 50vh;
     width: 100vw;
   }
+  #about-section-info-paragraph {
+    font-size: 3vw;
+  }
   #project-section-wrapper {
     height: 40vh;
     background-repeat: round;
@@ -492,6 +530,9 @@ body {
   .carousel-button {
     height: 10vw;
     width: 10vw;
+  }
+  .project-overlay {
+    display: none;
   }
   #contact-section-wrapper {
     height: 80vh;
