@@ -226,12 +226,18 @@ a {
   font-size: 2rem;
 }
 
+#about-animation {
+  margin-left: 10%;
+  font-size: 1.7rem;
+  font-weight: bolder;
+}
+
 #about-section-info-paragraph {
   width: 80%;
   margin-right: auto;
   margin-left: auto;
   font-weight: 100;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 /* project section styles */

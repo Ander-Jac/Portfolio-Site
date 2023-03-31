@@ -213,12 +213,17 @@ a {
     font-weight: bold;
     font-size: 2rem;
 }
+#about-animation {
+    margin-left: 10%;
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
 #about-section-info-paragraph {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
     font-weight: 100;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
 
@@ -481,7 +486,7 @@ a {
     #about-section-info-paragraph {
         font-size: 3vw;
     }
-    
+
     #project-section-wrapper {
         height: 40vh;
         background-repeat: round;

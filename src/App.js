@@ -1,5 +1,6 @@
 import React from "react";
 
+import { useEffect } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import "./App.css"
 
@@ -185,11 +186,44 @@ const HeroSection = () => {
   )
 }
 const AboutSection = () => {
+  useEffect(() => {
+    const animationList = [["d","e","v","e","l","o","p","e","r"], ["d","e","s","i","g","n","e","r"], ["p","r","o","b","l","e","m"," ","s","o","l","v","e","r"]];
+    const animationContainer = document.getElementById("about-animation");
+    
+    function animateWords() {
+      let delay = 0;
+    
+      animationList.forEach(function(word) {
+        word.forEach(function(letter) {
+          setTimeout(function() {
+            animationContainer.append(letter);
+          }, delay);
+          delay += 500;
+        });
+
+      // Clear container after the word is displayed 
+      setTimeout(function() {
+        animationContainer.innerHTML = "";
+      }, delay + 500);
+
+  
+      // Add a small delay between words
+      delay += 500;
+    });
+  
+    // Restart the animation after the last word
+    setTimeout(animateWords, delay);
+    }
+    
+    // Start the animation
+    animateWords();   
+  })
   return (
     <section id="about-section-wrapper">
       <div id="about-section-picture" alt="personal-picture"></div>
       <div id="about-section-info">
         <h2 id="about-section-info-header">About Me</h2>
+        <h2 id="about-animation"></h2>
         <p id="about-section-info-paragraph">Hi! I'm a self-taught web developer from Grand Rapids, Michigan, passionate about crafting visually striking and intuitive digital experiences. I prioritize clean, efficient, and responsive design for seamless user experiences. When not coding, I enjoy keeping fit and staying updated on the latest industry trends.</p>
       </div>
     </section>
